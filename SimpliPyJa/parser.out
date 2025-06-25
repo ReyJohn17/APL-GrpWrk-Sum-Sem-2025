@@ -1,0 +1,70 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COMMENT
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> BEGIN stmt_list DONE
+Rule 2     stmt_list -> stmt stmt_list
+Rule 3     stmt_list -> <empty>
+Rule 4     stmt -> assignment
+Rule 5     stmt -> print_stmt
+Rule 6     stmt -> if_stmt
+Rule 7     stmt -> for_loop
+Rule 8     stmt -> natural_stmt
+Rule 9     assignment -> MEK ID EQ expr
+Rule 10    print_stmt -> FLING LPAREN STRING RPAREN
+Rule 11    if_stmt -> IF expr BEGIN stmt_list DONE
+Rule 12    if_stmt -> IF expr BEGIN stmt_list DONE ELSE BEGIN stmt_list DONE
+Rule 13    for_loop -> FOR ID EQ expr TO expr BEGIN stmt_list DONE
+Rule 14    natural_stmt -> SET ID TO expr
+Rule 15    natural_stmt -> INCREASE ID BY expr
+Rule 16    expr -> expr PLUS expr
+Rule 17    expr -> expr MINUS expr
+Rule 18    expr -> expr MUL expr
+Rule 19    expr -> expr DIV expr
+Rule 20    expr -> LPAREN expr RPAREN
+Rule 21    expr -> NUMBER
+Rule 22    expr -> ID
+
+Terminals, with rules where they appear
+
+BEGIN                : 1 11 12 12 13
+COMMENT              : 
+DIV                  : 19
+DONE                 : 1 11 12 12 13
+ELSE                 : 12
+EQ                   : 9 13
+FLING                : 10
+FOR                  : 13
+ID                   : 9 13 14 15 22
+IF                   : 11 12
+INCREASE             : 15
+LPAREN               : 10 20
+MEK                  : 9
+MINUS                : 17
+MUL                  : 18
+NUMBER               : 21
+PLUS                 : 16
+RPAREN               : 10 20
+SET                  : 14
+STRING               : 10
+TO                   : 13 14
+error                : 
+
+Nonterminals, with rules where they appear
+
+BY                   : 15
+assignment           : 4
+expr                 : 9 11 12 13 13 14 15 16 16 17 17 18 18 19 19 20
+for_loop             : 7
+if_stmt              : 6
+natural_stmt         : 8
+print_stmt           : 5
+program              : 0
+stmt                 : 2
+stmt_list            : 1 2 11 12 12 13
+
